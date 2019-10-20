@@ -153,7 +153,15 @@ public class CircularSinglyLinkedList<E> {
 	}
 
 	public void deleteEntireList() {
-		
-		
+		if(isEmpty()) {
+			System.out.println("List is already empty");
+			return;
+		}
+		Node<E> temp = head;
+		while(temp.next != head) {
+			temp = temp.next;
+		}
+		temp.next = null;
+		head = null;
 	}
 }

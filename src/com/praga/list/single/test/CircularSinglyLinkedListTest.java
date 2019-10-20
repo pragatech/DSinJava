@@ -32,10 +32,10 @@ public class CircularSinglyLinkedListTest {
 		list.deleteAtMiddle(3);
 		list.deleteAtLast(); // added for testing
 		list.insertAtLast(100);
-		System.out.println();
+		
 		list.traverse();
 		list.deleteEntireList();
-		System.out.println("\nList is deleted");
+		System.out.println("\nEntire List is deleted");
 		list.traverse();
 
 	}
