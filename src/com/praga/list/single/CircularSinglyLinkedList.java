@@ -65,6 +65,7 @@ public class CircularSinglyLinkedList<E> {
 			temp.next = node;
 			head = node;
 		}
+		System.out.println(value +" is appended at first");
 	}
 	
 	public void insertAtLast(E value) {
@@ -79,6 +80,7 @@ public class CircularSinglyLinkedList<E> {
 			temp.next = node;
 			node.next = head;
 		}
+		System.out.println(value +" is appended at last");
 	}
 	
 	public void insertAtMiddle(E value, int pos) {
@@ -97,6 +99,7 @@ public class CircularSinglyLinkedList<E> {
 			node.next = temp.next;
 			temp.next = node;
 		}
+		System.out.println(value +" is appended at position "+pos);
 	}
 
 	public void deleteAtFirst() {

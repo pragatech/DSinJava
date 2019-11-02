@@ -7,5 +7,7 @@ public class Node<E> {
 	
 	public Node(E value) {
 		this.value = value;
+		this.next = null;
+		this.prev = null;
 	}
 }

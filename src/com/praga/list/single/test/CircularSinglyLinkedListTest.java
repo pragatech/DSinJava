@@ -12,7 +12,7 @@ public class CircularSinglyLinkedListTest {
 		list.insertAtFirst(3);
 		list.insertAtFirst(2);
 		list.insertAtFirst(1);
-		System.out.println("List position starts at Zero");
+		System.out.println("===List position starts at Zero===");
 		list.insertAtMiddle(4, 3);
 		list.insertAtMiddle(8, 9);
 		list.insertAtLast(9);
@@ -22,7 +22,7 @@ public class CircularSinglyLinkedListTest {
 		System.out.println("\n\nFind number 6");
 		list.find(6);
 
-		System.out.println("Deletition of list");
+		System.out.println("===Deletition of list===");
 		list.deleteAtFirst();
 		list.deleteAtFirst();
 		list.deleteAtLast();

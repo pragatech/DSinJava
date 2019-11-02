@@ -15,7 +15,6 @@ public class SinglyLinkedList<E> {
 	
 	public void createList(E value) {
 		Node<E> node = createNode(value);
-		node.next = head;
 		head = node;
 		tail = node;  
 	}
@@ -29,6 +28,7 @@ public class SinglyLinkedList<E> {
 			node.next = head;
 			head = node;
 		}
+		System.out.println(value +" is appended at first");
 	}
 	
 	//Node insertion at last
@@ -39,7 +39,8 @@ public class SinglyLinkedList<E> {
 			Node<E> node = createNode(value);
 			tail.next = node;
 			tail = node;
-		}			
+		}
+		System.out.println(value +" is appended at last");
 	}
 	
 	//Node insertion at middle
@@ -62,6 +63,7 @@ public class SinglyLinkedList<E> {
 				tail = node;
 			}
 		}
+		System.out.println(value +" is appended at pos "+pos);
 	}
 	
 	//traverse the list
@@ -86,11 +88,12 @@ public class SinglyLinkedList<E> {
 			while(temp.next != null) {
 				if(temp.getData().equals(value)) {
 					System.out.println("Given value is in list");
-					break;
+					return;
 				}
 				temp = temp.next;
 			}
 		}
+		System.out.println("value "+value+" is in list");
 	}
 	
 	//delete entire list
@@ -103,6 +106,7 @@ public class SinglyLinkedList<E> {
 		Node<E> temp = head;
 		head = head.next;
 		temp.next = null;
+		System.out.println(temp.getData()+" from the list");
 	}
 	
 	//delete list at first
@@ -122,6 +126,7 @@ public class SinglyLinkedList<E> {
 			if(delNode == tail) {
 				tail = temp;
 			}
+			System.out.println(delNode.getData()+" deleted from the list at position "+pos);
 		}
 	}
 	
@@ -132,8 +137,10 @@ public class SinglyLinkedList<E> {
 			while(temp.next != null && temp.next.next != null) {
 				temp = temp.next;
 			}
+			Node<E> delNode = temp.next;
 			temp.next = null;
 			tail = temp;
+			System.out.println(delNode.getData()+" deleted from end of the list");
 		}
 	}
 	
