@@ -42,4 +42,14 @@ public class StackUsingArray<E> {
 		log.info(data +" is poped");
 		return data;
 	}
+	
+	public E peek() {
+		if(top == -1) {
+			log.info("Stack is empty");
+			return null;
+		}
+		E data = stack[top];
+		log.info(data +" is in top of stack");
+		return data;		
+	}
 }

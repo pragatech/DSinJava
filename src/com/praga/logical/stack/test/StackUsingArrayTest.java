@@ -2,7 +2,7 @@ package com.praga.logical.stack.test;
 
 import com.praga.logical.stack.StackUsingArray;
 
-public class StackTestUsingArray {
+public class StackUsingArrayTest {
 	public static void main(String[] args) throws Exception {
 		StackUsingArray<Integer> s = new StackUsingArray(Integer.class, 5);
 		
@@ -22,6 +22,7 @@ public class StackTestUsingArray {
 		s.pop();
 		s.pop();
 		s.push(30);
+		s.peek();
 		s.pop();
 		System.out.println("Is stack empty?"+s.isEmpty());
 	}

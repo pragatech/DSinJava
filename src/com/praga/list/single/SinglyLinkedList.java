@@ -15,6 +15,9 @@ public class SinglyLinkedList<E> {
 		return head == null;
 	}
 	
+	public Node<E> getHead() {
+		return head;
+	}
 	//Node creation helper method
 	private Node<E> createNode(E value){
 		return new Node<>(value); 
