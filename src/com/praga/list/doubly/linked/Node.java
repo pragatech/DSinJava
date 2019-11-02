@@ -10,4 +10,6 @@ public class Node<E> {
 		this.next = null;
 		this.prev = null;
 	}
+	
+	
 }

@@ -12,11 +12,10 @@ public class CircularSinglyLinkedListTest {
 		list.insertAtFirst(3);
 		list.insertAtFirst(2);
 		list.insertAtFirst(1);
-		System.out.println("===List position starts at Zero===");
-		list.insertAtMiddle(4, 3);
-		list.insertAtMiddle(8, 9);
+		list.insertAt(4, 4);
+		list.insertAt(8, 9);
 		list.insertAtLast(9);
-		list.insertAtMiddle(6, 5);
+		list.insertAt(6, 6);
 		list.traverse();
 
 		System.out.println("\n\nFind number 6");
@@ -26,13 +25,12 @@ public class CircularSinglyLinkedListTest {
 		list.deleteAtFirst();
 		list.deleteAtFirst();
 		list.deleteAtLast();
-		list.deleteAtMiddle(2);
-		list.deleteAtMiddle(3);
-		list.deleteAtMiddle(3);
-		list.deleteAtMiddle(3);
+		list.deleteAt(2);
+		list.deleteAt(3);
+		list.deleteAt(3);
 		list.deleteAtLast(); // added for testing
 		list.insertAtLast(100);
-		
+		System.out.println("\nTraversing the list");
 		list.traverse();
 		list.deleteEntireList();
 		System.out.println("\nEntire List is deleted");

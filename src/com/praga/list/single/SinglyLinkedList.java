@@ -1,6 +1,13 @@
 package com.praga.list.single;
 
-public class SinglyLinkedList<E> {
+import java.util.logging.Logger;
+
+public class SinglyLinkedList<E> {	
+	{
+		System.out.println("Initializer is always first. Before constructor");
+		System.setProperty("java.util.logging.config.file", "logging.properties");
+	}
+	private final Logger log = Logger.getLogger(SinglyLinkedList.class.getName());
 	private Node<E> head = null;
 	private Node<E> tail = null;
 
@@ -28,7 +35,7 @@ public class SinglyLinkedList<E> {
 			node.next = head;
 			head = node;
 		}
-		System.out.println(value +" is appended at first");
+		log.info(value +" is appended at first");
 	}
 	
 	//Node insertion at last
@@ -40,18 +47,18 @@ public class SinglyLinkedList<E> {
 			tail.next = node;
 			tail = node;
 		}
-		System.out.println(value +" is appended at last");
+		log.info(value +" is appended at last");
 	}
 	
 	//Node insertion at middle
-	public void insertAtMiddle(E value, int pos) {
+	public void insertAt(E value, int pos) {
 		if(isEmpty()) {
 			createList(value); 
-		}else if(pos == 0){
+		}else if(pos == 1){
 			insertAtFirst(value);
 		}else {
 			Node<E> node = createNode(value);
-			int counter = 0;
+			int counter = 1;
 			Node<E> temp = head;
 			while(counter != pos-1 && temp.next != null) {
 				temp = temp.next;
@@ -63,13 +70,13 @@ public class SinglyLinkedList<E> {
 				tail = node;
 			}
 		}
-		System.out.println(value +" is appended at pos "+pos);
+		log.info(value +" is appended at pos "+pos);
 	}
 	
 	//traverse the list
 	public void traverse() {
 		if(isEmpty()) {
-			System.out.println("List is empty");
+			log.info("List is empty");
 			return;
 		}
 		Node<E> temp = head;
@@ -82,18 +89,18 @@ public class SinglyLinkedList<E> {
 	//serach the list
 	public void search(E value) {
 		if(isEmpty()) {
-			System.out.println("list is empty");
+			log.info("list is empty");
 		}else {
 			Node<E> temp = head;
 			while(temp.next != null) {
 				if(temp.getData().equals(value)) {
-					System.out.println("Given value is in list");
+					log.info("Given value is in list");
 					return;
 				}
 				temp = temp.next;
 			}
 		}
-		System.out.println("value "+value+" is in list");
+		log.info("value "+value+" is in list");
 	}
 	
 	//delete entire list
@@ -106,13 +113,13 @@ public class SinglyLinkedList<E> {
 		Node<E> temp = head;
 		head = head.next;
 		temp.next = null;
-		System.out.println(temp.getData()+" from the list");
+		log.info(temp.getData()+" from the list");
 	}
 	
 	//delete list at first
-	public void deleteAtMiddle(int pos) {
+	public void deleteAt(int pos) {
 		if(!isEmpty()) {
-			int counter = 0;
+			int counter = 1;
 			Node<E> temp = head;
 			while(counter != pos-1 && temp.next != null && temp.next.next != null) {
 				temp = temp.next;
@@ -126,7 +133,7 @@ public class SinglyLinkedList<E> {
 			if(delNode == tail) {
 				tail = temp;
 			}
-			System.out.println(delNode.getData()+" deleted from the list at position "+pos);
+			log.info(delNode.getData()+" deleted from the list at position "+pos);
 		}
 	}
 	
@@ -140,7 +147,7 @@ public class SinglyLinkedList<E> {
 			Node<E> delNode = temp.next;
 			temp.next = null;
 			tail = temp;
-			System.out.println(delNode.getData()+" deleted from end of the list");
+			log.info(delNode.getData()+" deleted from end of the list");
 		}
 	}
 	

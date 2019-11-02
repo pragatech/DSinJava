@@ -1,14 +1,14 @@
-package com.praga.list.single.test;
+package com.praga.list.doubly.linked.test;
 
-import com.praga.list.single.SinglyLinkedList;
+import com.praga.list.doubly.linked.DoublyLinkedList;
 
-public class SinglyLinkedListTest {
-
+public class DoublyLinkedListTest {
 	public static void main(String[] args) {
-		SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
+		DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+		System.out.println("====Doubly-Linked List====");
+		list.traverse();
 		
-		System.out.println("is List Empty:"+list.isEmpty());
-		System.out.println("Insert few numbers");
+		System.out.println("====Insertion Doubly-Linked List====");
 		list.insertAtFirst(5);
 		list.insertAtFirst(3);
 		list.insertAtFirst(2);
@@ -18,6 +18,8 @@ public class SinglyLinkedListTest {
 		list.insertAtLast(9);
 		list.insertAt(6, 6);
 		list.traverse();
+		System.out.println("\n====Doubly-Linked List - reverse Order====");
+		list.reverseTraverse();
 		
 		System.out.println("\n\nFind number 6");
 		list.search(6);
@@ -34,11 +36,11 @@ public class SinglyLinkedListTest {
 		System.out.println();
 		System.out.println("\nTraversing the list");
 		list.traverse();
-		System.out.println("\n Deleting Entire List");
+		System.out.println("\nReverse-Traversing the list");
+		list.reverseTraverse();
+		System.out.println("\nDeleting Entire List");
 		list.deleteEntireList();
 		System.out.println("\nTraversing the list");
 		list.traverse();
-		
 	}
-
 }
