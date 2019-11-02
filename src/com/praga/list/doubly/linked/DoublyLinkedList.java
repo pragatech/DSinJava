@@ -101,18 +101,62 @@ public class DoublyLinkedList<E> {
 		}
 	}
 	public void search(E data) {
-		
+		Node<E> temp = head;
+		while(temp != null && temp.value != data) {
+			temp = temp.next;
+		}
+		if(temp == null) {
+			log.info("Given number "+data+" is not in the list");
+		}else {
+			log.info("Given number "+data+" is in the list");
+		}
 	}
 	public void deleteAtFirst() {
-		
+		if(!isEmpty()) {
+			Node<E> temp = head;
+			head = temp.next;
+			temp.next = null;
+			head.prev = null;
+			log.info(temp.value+" is deleted from start of the list");
+		}
 	}
 	public void deleteAt(int pos) {
-		
+		if(!isEmpty() && pos == 1) {
+			deleteAtFirst();
+		}else if(!isEmpty()) {
+			int counter = 1;
+			Node<E> temp = head;
+			while(counter != pos-1 && temp.next != null) {
+				temp = temp.next;
+				counter++;
+			}
+			if(temp == tail) {
+				deleteAtLast();
+			}else {
+				Node<E> delNode = temp.next;
+				temp.next = delNode.next;
+				delNode.next.prev=temp;
+				delNode.next=delNode.prev=null;
+				log.info(delNode.value+" is deleleted from position "+pos);
+			}
+			
+		}
 	}
 	public void deleteAtLast() {
-		
+		if(!isEmpty()) {
+			Node<E> temp = tail;
+			tail = temp.prev;
+			tail.next=null;
+			temp.prev=null;
+		}
 	}
 	public void deleteEntireList() {
-		
+		Node<E> temp = head;
+		while(temp != null) {
+			temp = temp.next;
+			head.next = null;
+			head = temp;
+		}
+		tail=null;
 	}
 }
