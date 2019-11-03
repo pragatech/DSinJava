@@ -9,7 +9,8 @@ public class StackUsingArray<E> {
 	private int top;
 	private int size;
 	
-	public StackUsingArray(Class E, int size){
+	@SuppressWarnings("unchecked")
+	public StackUsingArray(Class<E> E, int size){
 		this.size = size;
 		stack = (E[]) Array.newInstance(E, size);
 		top = -1;
